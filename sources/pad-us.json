@@ -1,0 +1,76 @@
+{
+  "name": "Federally Protected Areas of the United States from the PADUS Database",
+  "attribution": "US Geological Survey Gap Analysis Program",
+  "properties": {
+    "name": "Unit_Nm",
+    "adminLevel": {"static" : "federal"},
+    "owner" : "d_Own_Name",
+    "adminAgency": {
+    	"key" : "Mang_Name",
+    		"mapping" : {
+    			"ARS" : "Agricultural Research Service",
+    			"TVA" : "Tennessee Valley Authority",
+    			"USBR" : "Bureau of Reclamation",
+    			"BLM" : "Bureau of Land Management",
+    			"BIA" : "Bureau of Indian Affairs",
+    			"DOD" : "Department of Defense",
+    			"Army Corps of Engineers" : "Army Corps of Engineers",
+    			"National Park Service" : "National Park Service",
+    			"Forest Service" : "Forest Service",
+    			"U.S. Fish & Wildlife Service" : "Fish & Wildlife Service",
+    			"Other or Unknown Federal Land" : "Federal Government"
+    		}
+    },	
+    "type": {
+      "key": "Loc_Ds",
+      "mapping": {
+        "NWR": "refuge",
+        "WMA": "wildlife management area",
+        "REA" : "other",
+        "NCA" : "conservation area",
+        "PUB" : "other",
+        "REC" : "recreation area",
+        "NF" : "forest",
+        "FOTH" : "unknown",
+        "HCA" : "other",
+        "ND" : "undesignated",
+        "SP" : "park",
+        "RMA" : "resource management area",
+        "NSBV" : "scenic area",
+        "MIL" : "military installation",
+        "SREC" : "recreation area",
+        "NLS" : "lakeshore or seashore",
+        "NM" : "monument",
+        "NP" : "park",
+        "NRA" : "recreation area",
+        "SDA" : "other",
+        "WSR" : "wild and scenic river",
+        "NT" : "trail",
+        "NG" : "grassland",
+        "IRA" : "other",
+        "RNA" : "research natural area",
+        "ACEC" : "other",
+        "WSA" : "wilderness study area",
+        "WA" : "wilderness area",
+        "RNA" : "natural area",
+        "PROC" : "other",
+        "LREC" : "recreation area"
+      }
+    }
+  },
+  "filetype": "shp",
+  "url": "http://data.openbounds.org/publiclands/sources/padus-1.4.shp.zip",
+  "filenameInZip": "PADUS1_4Fee.shp",
+  "filter": [
+    {
+      "expression": "match",
+      "key": "Mang_Type",
+      "value": "FED"
+    },
+    {
+      "expression": "!=",
+      "key": "Des_Tp",
+      "value": "TRIBL"
+    }
+  ]
+}

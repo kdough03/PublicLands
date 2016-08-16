@@ -1,0 +1,43 @@
+{
+"name" : "State Managed Lands in the PAD US Database",
+"attribution" : "US Geological Survey GAP Analysis Program",
+"properties" : {
+	"name" : "Unit_Nm",
+	"adminLevel" : {"static" : "state"},
+	"owner" : "d_Own_Name",
+	"adminAgency" : "Mang_Name",
+	"type" : {
+		"key" : "Loc_Ds",
+		"mapping" : {
+			"SREC" : "recreation area",
+			"RMA" : "resource management area",
+			"SP" : "park",
+			"SCA" : "conservation area",
+			"SRMA" : "resource management area",
+			"LCA" : "conservation area",
+			"WPA" : "other",
+			"LREC" : "recreation area",
+			"SOTH" : "unknown",
+			"LRMA" : "other",
+			"LP" : "park",
+			"LHCA" : "other",
+			"LOTH" : "unknown"	
+			}
+		}
+	}, 
+ "filetype": "shp",
+  "url": "http://data.openbounds.org/publiclands/sources/padus-1.4.shp.zip",
+  "filenameInZip": "PADUS1_4Fee.shp",
+  "filter": [
+    {
+      "expression": "match",
+      "key": "Mang_Type",
+      "value": "STAT"
+    },
+    {
+      "expression": "!=",
+      "key": "Des_Tp",
+      "value": "(^Private|.*Private)"
+    }
+  ]	
+}
