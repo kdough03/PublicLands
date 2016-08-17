@@ -1,0 +1,71 @@
+{
+"name" : "Federally-Managed Lands in Colorado",
+"attribution" : "US Geological Survey GAP Analysis Program",
+"properties" : {
+	"name" : "Unit_Nm",
+	"adminLevel" : {"static" : "federal"},
+	"owner" : "d_Own_Name",
+	"adminAgency" : {
+		"key" : "Mang_Name",
+			"mapping" : {
+				"ARS" : "Agricultural Research Service",
+				"BLM" : "Bureau of Land Management",
+				"DOD" : "Department of Defense",
+				"DOE" : "Department of Energy",
+				"FWS" : "Fish & Wildlife Service",
+				"NPS" : "National Park Service",
+				"NRCS" : "National Resource Conservation Service",
+				"USACE" : "Army Corps of Engineers",
+				"USBR" : "Bureau of Reclamation",
+				"USFS" : "Forest Service"
+			}
+		},
+	"type" : {
+		"key" : "d_Des_Tp",
+		"mapping" : {
+			"Wilderness Area" : "wilderness area",
+			"Federal Other or Unknown" : "unknown",
+			"National Public Lands" : "other",
+			"Wild and Scenic River" : "wild and scenic river",
+			"Area of Critical Environmental Concern" : "other",
+			"Conservation Area" : "conservation area",
+			"National Monument or Landmark" : "monument",
+			"Wilderness Study Area" : "wilderness study area",
+			"Military Land" : "military installation",
+			"National Wildlife Refuge" : "wildlife refuge",
+			"Historic or Cultural Area" : "historic site",
+			"National Park" : "park",
+			"Approved or Proclamation Boundary" : "other",
+			"Recreation Management Area" : "recreation area",
+			"Resource Management Area" : "other",
+			"National Forest" : "forest",
+			"National Grassland" : "grassland",
+			"Inventoried Roadless Area" : "other",
+			"Research Natural Area" : "natural area",
+			"National Scenic, Botanical or Volcanic Area" : "other",
+			"Research or Educational Area" : "other",
+			"Special Designation Area" : "other"
+			}
+		}
+	}, 
+	"filetype": "shp",
+  	"url": "https://s3.amazonaws.com/data.openbounds.org/PADUS1_4CO_Shapefile.zip",
+  	"filenameInZip": "PADUS1_4Fee_Easements_CO.shp",
+  	"filter": [
+    	{
+      		"expression": "!=",
+      		"key": "d_Des_Tp",
+      		"value": "(.*Easement|^Easement|.*Private|^Private)"
+    	},
+    	{
+      		"expression": "!=",
+      		"key": "Own_Name",
+      		"value": "PVT"
+    	},
+    	{
+      		"expression": "!=",
+      		"key": "Mang_Name",
+      		"value": "BIA"
+    	}
+	]	
+}
