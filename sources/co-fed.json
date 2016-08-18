@@ -1,5 +1,5 @@
 {
-"name" : "Federally-Managed Lands in Colorado",
+"name" : "Federal Lands in Colorado",
 "attribution" : "US Geological Survey GAP Analysis Program",
 "properties" : {
 	"name" : "Unit_Nm",
@@ -53,6 +53,11 @@
   	"filenameInZip": "PADUS1_4Fee_Easements_CO.shp",
   	"filter": [
     	{
+		"expression": "match",
+		"key": "Mang_Name",
+		"value": "(ARS|BLM|DOD|DOE|FWS|NPS|NRCS|USACE|USBR|USFS)"
+        },
+    	{
       		"expression": "!=",
       		"key": "d_Des_Tp",
       		"value": "(.*Easement|^Easement|.*Private|^Private)"
@@ -61,11 +66,6 @@
       		"expression": "!=",
       		"key": "Own_Name",
       		"value": "PVT"
-    	},
-    	{
-      		"expression": "!=",
-      		"key": "Mang_Name",
-      		"value": "BIA"
     	}
 	]	
 }
